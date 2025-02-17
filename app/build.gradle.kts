@@ -1,11 +1,12 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
     namespace = "com.example.ukk2025"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.ukk2025"
@@ -33,9 +34,23 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures{
+        dataBinding = true
+    }
 }
 
 dependencies {
+
+    implementation(libs.firebase.auth)
+    val nav_version = "2.8.0"
+    //noinspection GradleDependency
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    //noinspection GradleDependency
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+
+    //firebase
+    implementation ("com.google.firebase:firebase-auth-ktx:22.0.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

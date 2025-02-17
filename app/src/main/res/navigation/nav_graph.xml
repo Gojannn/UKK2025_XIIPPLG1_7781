@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/halaman_login2">
+    <fragment
+        android:id="@+id/tampilan"
+        android:name="com.example.ukk2025.tampilan"
+        android:label="tampilan" >
+        <action
+            android:id="@+id/action_tampilan_to_halaman_login2"
+            app:destination="@id/halaman_login2" />
+    </fragment>
+    <fragment
+        android:id="@+id/halaman_login2"
+        android:name="com.example.ukk2025.halaman_login"
+        android:label="halaman_login" >
+        <action
+            android:id="@+id/action_halaman_login2_to_halaman_register"
+            app:destination="@id/halaman_register" />
+    </fragment>
+    <fragment
+        android:id="@+id/halaman_register"
+        android:name="com.example.ukk2025.halaman_register"
+        android:label="halaman_register" >
+        <action
+            android:id="@+id/action_halaman_register_to_halaman_login2"
+            app:destination="@id/halaman_login2" />
+    </fragment>
+</navigation>
