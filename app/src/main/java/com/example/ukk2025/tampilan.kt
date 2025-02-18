@@ -16,20 +16,12 @@ class tampilan : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_tampilan, container, false)
-
-        // Panggil showLoading
-        showLoading()
-
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_halaman_login, container, false)
         return binding.root
     }
 
-    private fun showLoading() {
-        binding.progresbarr.visibility = View.VISIBLE
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
 
-    private fun hideLoading() {
-        binding.progresbarr.visibility = View.GONE
-    }
 }

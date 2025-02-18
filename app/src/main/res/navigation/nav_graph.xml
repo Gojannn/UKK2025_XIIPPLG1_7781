@@ -1,37 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/halaman_login2">
+    app:startDestination="@id/halaman_login">
     <fragment
         android:id="@+id/halaman_home"
         android:name="com.example.ukk2025.halaman_home"
-        android:label="halaman_home" />
-    <fragment
-        android:id="@+id/halaman_register"
-        android:name="com.example.ukk2025.halaman_register"
-        android:label="halaman_register" >
+        android:label="halaman_home" >
         <action
-            android:id="@+id/action_halaman_register_to_halaman_login"
-            app:destination="@id/halaman_login" />
-    </fragment>
-    <fragment
-        android:id="@+id/halaman_login"
-        android:name="com.example.ukk2025.halaman_login"
-        android:label="halaman_login" >
-        <action
-            android:id="@+id/action_halaman_login_to_halaman_register"
-            app:destination="@id/halaman_register" />
-        <action
-            android:id="@+id/action_halaman_login_to_halaman_home"
-            app:destination="@id/halaman_home" />
+            android:id="@+id/action_halaman_home_to_tambah_halaman"
+            app:destination="@id/tambah_halaman" />
     </fragment>
     <fragment
         android:id="@+id/tampilan3"
         android:name="com.example.ukk2025.tampilan"
         android:label="tampilan" >
         <action
-            android:id="@+id/action_tampilan3_to_halaman_login"
+            android:id="@+id/action_tampilan3_to_halaman_login2"
+            app:destination="@id/halaman_login" />
+    </fragment>
+    <fragment
+        android:id="@+id/tambah_halaman"
+        android:name="com.example.ukk2025.tambah_halaman"
+        android:label="tambah_halaman" >
+        <action
+            android:id="@+id/action_tambah_halaman_to_halaman_home"
+            app:destination="@id/halaman_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/halaman_login"
+        android:name="halaman_login"
+        android:label="halaman_login">
+        <action
+            android:id="@+id/action_halaman_login_to_halaman_register2"
+            app:destination="@id/halaman_register" />
+        <action
+            android:id="@+id/action_halaman_login_to_halaman_home2"
+            app:destination="@id/halaman_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/halaman_register"
+        android:name="halaman_register"
+        android:label="halaman_register" >
+        <action
+            android:id="@+id/action_halaman_register_to_halaman_login2"
             app:destination="@id/halaman_login" />
     </fragment>
 </navigation>

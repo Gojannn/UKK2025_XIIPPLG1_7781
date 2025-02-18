@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.fragment_tampilan)
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.main) as NavHostFragment
-        val NavController = navHostFragment.navController
+        navHostFragment.navController
 
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this@MainActivity, MainActivity::class.java))

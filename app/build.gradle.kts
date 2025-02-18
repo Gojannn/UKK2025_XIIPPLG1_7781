@@ -42,7 +42,9 @@ android {
 
 dependencies {
 
-    implementation(libs.firebase.auth)
+    implementation ("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0")
+
+//    implementation(libs.firebase.auth)
     val nav_version = "2.8.0"
     //noinspection GradleDependency
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
@@ -50,7 +52,8 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
 
     //firebase
-    implementation ("com.google.firebase:firebase-auth-ktx:22.0.0")
+//    implementation ("com.google.firebase:firebase-auth:22.2.0")
+//    implementation ("com.google.firebase:firebase-auth-ktx:22.2.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
