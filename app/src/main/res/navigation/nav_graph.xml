@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/halaman_login">
+    app:startDestination="@id/signin">
     <fragment
         android:id="@+id/halaman_home"
         android:name="com.example.ukk2025.halaman_home"
@@ -12,14 +12,7 @@
             android:id="@+id/action_halaman_home_to_tambah_halaman"
             app:destination="@id/tambah_halaman" />
     </fragment>
-    <fragment
-        android:id="@+id/tampilan3"
-        android:name="com.example.ukk2025.tampilan"
-        android:label="tampilan" >
-        <action
-            android:id="@+id/action_tampilan3_to_halaman_login2"
-            app:destination="@id/halaman_login" />
-    </fragment>
+
     <fragment
         android:id="@+id/tambah_halaman"
         android:name="com.example.ukk2025.tambah_halaman"
@@ -29,22 +22,22 @@
             app:destination="@id/halaman_home" />
     </fragment>
     <fragment
-        android:id="@+id/halaman_login"
-        android:name="halaman_login"
-        android:label="halaman_login">
+        android:id="@+id/daftar2"
+        android:name="daftar"
+        android:label="daftar" >
         <action
-            android:id="@+id/action_halaman_login_to_halaman_register2"
-            app:destination="@id/halaman_register" />
-        <action
-            android:id="@+id/action_halaman_login_to_halaman_home2"
-            app:destination="@id/halaman_home" />
+            android:id="@+id/action_daftar2_to_signin"
+            app:destination="@id/signin" />
     </fragment>
     <fragment
-        android:id="@+id/halaman_register"
-        android:name="halaman_register"
-        android:label="halaman_register" >
+        android:id="@+id/signin"
+        android:name="signin"
+        android:label="signin" >
         <action
-            android:id="@+id/action_halaman_register_to_halaman_login2"
-            app:destination="@id/halaman_login" />
+            android:id="@+id/action_signin_to_halaman_home"
+            app:destination="@id/halaman_home" />
+        <action
+            android:id="@+id/action_signin_to_daftar2"
+            app:destination="@id/daftar2" />
     </fragment>
 </navigation>

@@ -7,8 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.ukk2025.databinding.FragmentHalamanHomeBinding
-import com.example.ukk2025.databinding.FragmentHalamanLoginBinding
-//import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuth
 
 class halaman_home : Fragment() {
 
@@ -22,8 +21,9 @@ class halaman_home : Fragment() {
         binding = FragmentHalamanHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         binding.tambah.setOnClickListener {
             findNavController().navigate(R.id.action_halaman_home_to_tambah_halaman)

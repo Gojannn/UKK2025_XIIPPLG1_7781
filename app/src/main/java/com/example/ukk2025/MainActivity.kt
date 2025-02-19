@@ -19,19 +19,18 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_tampilan)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.main) as NavHostFragment
+
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         navHostFragment.navController
 
-        Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this@MainActivity, MainActivity::class.java))
-            finish()
-        }, 3000)
+
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.main)
+        val navController = findNavController(R.id.fragmentContainerView)
         return navController.navigateUp() || super.onSupportNavigateUp()
     }
 }
