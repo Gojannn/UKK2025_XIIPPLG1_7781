@@ -42,30 +42,20 @@ android {
 
 dependencies {
 
-//    implementation ("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0")
-
-        // Import the BoM for the Firebase platform
     implementation(platform("com.google.firebase:firebase-bom:33.8.0"))
-
-        // Add the dependency for the Firebase Authentication library
-        // When using the BoM, you don't specify versions in Firebase library dependencies
-    implementation("com.google.firebase:firebase-auth")
-
+    implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("com.google.firebase:firebase-firestore-ktx")
         // Also add the dependency for the Google Play services library and specify its version
-    implementation("com.google.android.gms:play-services-auth:21.3.0")
-
-
+//    implementation("com.google.android.gms:play-services-auth:21.3.0")
+//    implementation(libs.firebase.firestore.ktx)
 //    implementation(libs.firebase.auth)
     val nav_version = "2.8.0"
     //noinspection GradleDependency
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     //noinspection GradleDependency
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
-
-    //firebase
-//    implementation ("com.google.firebase:firebase-auth:22.2.0")
-//    implementation ("com.google.firebase:firebase-auth-ktx:22.2.0")
-
+//    implementation("com.google.firebase:firebase-firestore-ktx:24.4.0")
+    implementation("androidx.core:core-ktx:1.9.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

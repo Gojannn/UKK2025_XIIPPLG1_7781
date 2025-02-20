@@ -1,4 +1,6 @@
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Patterns
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -26,14 +28,6 @@ class daftar : Fragment() {
         _binding = FragmentDaftarBinding.inflate(inflater, container, false)
         return binding.root
 
-        showloading()
-    }
-
-    private fun showloading(){
-        binding.Loading.visibility = View.VISIBLE
-    }
-    private fun hideLoading(){
-        binding.Loading.visibility = View.GONE
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -41,9 +35,10 @@ class daftar : Fragment() {
 
         auth = FirebaseAuth.getInstance()
 
-        //Navigasi to Register
+        //kembali ke halaman login setelah regist
         binding.daftar.setOnClickListener{
             findNavController().navigate(R.id.action_daftar2_to_signin)
+
         }
         binding.daftar.setOnClickListener{
             val name = binding.regNama.text.toString()
@@ -83,6 +78,14 @@ class daftar : Fragment() {
                 binding.regPassword.requestFocus()
                 return@setOnClickListener
             }
+
+            //fungsi progressbar / loading
+            binding.Loading.visibility = View.VISIBLE
+
+            Handler(Looper.getMainLooper()).postDelayed({
+                binding.Loading.visibility = View.GONE
+            },3000)
+
             registerWithFirebase(email, password)
         }
     }

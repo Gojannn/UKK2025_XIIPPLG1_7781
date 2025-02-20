@@ -60,7 +60,7 @@ class signin : Fragment() {
             }
 
             if (password.length < 6) {
-                binding.password.error = "Minimal 6 Karakter"
+                binding.password.error = "Password Salah!"
                 binding.password.requestFocus()
                 return@setOnClickListener
             }
